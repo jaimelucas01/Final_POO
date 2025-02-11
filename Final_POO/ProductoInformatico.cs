@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VentaProductos
+namespace Final_POO
 {
     public abstract class ProductoInformatico
     {
