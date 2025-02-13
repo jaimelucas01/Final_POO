@@ -140,7 +140,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Final POO";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
