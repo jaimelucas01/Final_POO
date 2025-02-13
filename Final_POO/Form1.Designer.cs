@@ -101,7 +101,7 @@
             // 
             btnAdd.Location = new Point(676, 156);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(230, 59);
+            btnAdd.Size = new Size(230, 41);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
             btnAdd.UseVisualStyleBackColor = true;
