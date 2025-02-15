@@ -10,15 +10,14 @@ namespace Final_POO
     {
         public string Socket { get; set; }
 
-        public PlacaMadre(string nombre, string marca, decimal precio, int stock, string socket)
-            : base(nombre, marca, precio, stock, "Placa Madre")
+        public PlacaMadre(string marca, string nombre, string tipo, decimal precio, int stock, string socket) : base(marca, nombre, tipo, precio, stock)
         {
             Socket = socket;
         }
 
-        public override decimal CalcularDescuento(decimal porcentaje)
-        {
-            return Precio - (Precio * (porcentaje / 100));
-        }
+        //public override decimal CalcularDescuento(decimal porcentaje)
+        //{
+        //    return Precio - (Precio * (porcentaje / 100));
+        //}
     }
 }

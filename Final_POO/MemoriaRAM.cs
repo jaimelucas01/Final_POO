@@ -11,15 +11,14 @@ namespace Final_POO
     {
         public int CapacidadGB { get; set; }
 
-        public MemoriaRAM(string nombre, string marca, decimal precio, int stock, int capacidadGB)
-            : base(nombre, marca, precio, stock, "Memoria RAM")
+        public MemoriaRAM(string marca, string nombre, string tipo, decimal precio, int stock, int capacidadGB) : base(marca, nombre, tipo, precio, stock)
         {
             CapacidadGB = capacidadGB;
         }
 
-        public override decimal CalcularDescuento(decimal porcentaje)
-        {
-            return Precio - (Precio * (porcentaje / 100));
-        }
+        //public override decimal CalcularDescuento(decimal porcentaje)
+        //{
+        //    return Precio - (Precio * (porcentaje / 100));
+        //}
     }
 }

@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Final_POO
+{
+    internal class Almacenamiento : ProductoInformatico
+    {
+        public int CapacidadGB { get; set; }
+
+        public Almacenamiento(string marca, string nombre, string tipo, decimal precio, int stock, int capacidadGB) : base(marca, nombre, tipo, precio, stock)
+        {
+            CapacidadGB = capacidadGB;
+        }
+    }
+}

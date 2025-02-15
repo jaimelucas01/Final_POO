@@ -8,13 +8,13 @@ namespace Final_POO
 {
     public abstract class ProductoInformatico
     {
-        public string Nombre { get; set; }
         public string Marca { get; set; }
+        public string Nombre { get; set; }
+        public string Tipo { get; set; }
         public decimal Precio { get; set; }
         public int Stock { get; set; }
-        public string Tipo { get; set; }
 
-        protected ProductoInformatico(string nombre, string marca, decimal precio, int stock, string tipo)
+        protected ProductoInformatico(string marca, string nombre, string tipo, decimal precio, int stock)
         {
             if (string.IsNullOrWhiteSpace(nombre)) throw new ArgumentException("El nombre no puede estar vacío.");
             if (precio <= 0) throw new ArgumentException("El precio debe ser mayor a 0.");
@@ -22,9 +22,9 @@ namespace Final_POO
 
             Nombre = nombre;
             Marca = marca;
+            Tipo = tipo;
             Precio = precio;
             Stock = stock;
-            Tipo = tipo;
         }
 
         public virtual string MostrarInfo()
@@ -32,6 +32,6 @@ namespace Final_POO
             return $"{Tipo}: {Nombre} - {Marca}, Precio: {Precio:C}, Stock: {Stock}";
         }
 
-        public abstract decimal CalcularDescuento(decimal porcentaje);
+        //public abstract decimal CalcularDescuento(decimal porcentaje);
     }
 }

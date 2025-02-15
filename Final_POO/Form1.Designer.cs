@@ -38,6 +38,11 @@
             btnAdd = new Button();
             btnMod = new Button();
             btnDel = new Button();
+            txtStock = new TextBox();
+            label4 = new Label();
+            txtTipo = new TextBox();
+            label5 = new Label();
+            btnExit = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +88,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(676, 118);
+            txtPrecio.Location = new Point(676, 206);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(230, 23);
             txtPrecio.TabIndex = 7;
@@ -91,7 +96,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(676, 100);
+            label3.Location = new Point(676, 188);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 6;
@@ -99,12 +104,13 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(676, 156);
+            btnAdd.Location = new Point(676, 235);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(230, 41);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnMod
             // 
@@ -114,6 +120,7 @@
             btnMod.TabIndex = 9;
             btnMod.Text = "Modificar";
             btnMod.UseVisualStyleBackColor = true;
+            btnMod.Click += btnMod_Click;
             // 
             // btnDel
             // 
@@ -123,12 +130,60 @@
             btnDel.TabIndex = 10;
             btnDel.Text = "Eliminar";
             btnDel.UseVisualStyleBackColor = true;
+            btnDel.Click += btnDel_Click;
+            // 
+            // txtStock
+            // 
+            txtStock.Location = new Point(676, 162);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(230, 23);
+            txtStock.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(676, 144);
+            label4.Name = "label4";
+            label4.Size = new Size(36, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Stock";
+            // 
+            // txtTipo
+            // 
+            txtTipo.Location = new Point(676, 118);
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new Size(230, 23);
+            txtTipo.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(676, 100);
+            label5.Name = "label5";
+            label5.Size = new Size(30, 15);
+            label5.TabIndex = 13;
+            label5.Text = "Tipo";
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(801, 390);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(107, 39);
+            btnExit.TabIndex = 15;
+            btnExit.Text = "Salir";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 441);
+            Controls.Add(btnExit);
+            Controls.Add(txtTipo);
+            Controls.Add(label5);
+            Controls.Add(txtStock);
+            Controls.Add(label4);
             Controls.Add(btnDel);
             Controls.Add(btnMod);
             Controls.Add(btnAdd);
@@ -158,5 +213,10 @@
         private Button btnAdd;
         private Button btnMod;
         private Button btnDel;
+        private TextBox txtStock;
+        private Label label4;
+        private TextBox txtTipo;
+        private Label label5;
+        private Button btnExit;
     }
 }

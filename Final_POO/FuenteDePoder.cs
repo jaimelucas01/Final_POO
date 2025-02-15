@@ -10,15 +10,14 @@ namespace Final_POO
     {
         public int PotenciaW { get; set; }
 
-        public FuenteDePoder(string nombre, string marca, decimal precio, int stock, int potenciaW)
-            : base(nombre, marca, precio, stock, "Fuente de Poder")
+        public FuenteDePoder(string nombre, string marca, string tipo, decimal precio, int stock, int potenciaW): base(nombre, marca, tipo, precio, stock)
         {
             PotenciaW = potenciaW;
         }
 
-        public override decimal CalcularDescuento(decimal porcentaje)
-        {
-            return Precio - (Precio * (porcentaje / 100));
-        }
+        //public override decimal CalcularDescuento(decimal porcentaje)
+        //{
+        //    return Precio - (Precio * (porcentaje / 100));
+        //}
     }
 }
