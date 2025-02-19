@@ -8,11 +8,11 @@ namespace Final_POO
 {
     public abstract class ProductoBase
     {
-        public required int ID { get; set; }
-        public required string Nombre { get; set; }
-        public required string Marca { get; set; }
-        public required decimal Precio { get; set; }
-        public required int Stock { get; set; }
+        public int ID { get; set; } = 0;
+        public string Nombre { get; set; } = "";
+        public string Marca { get; set; } = "";
+        public decimal Precio { get; set; } = 0;
+        public int Stock { get; set; } = 0;
 
         protected ProductoBase() 
         {

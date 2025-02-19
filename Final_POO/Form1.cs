@@ -2,10 +2,13 @@ namespace Final_POO
 {
     public partial class Form1 : Form
     {
+        public Almacén Oalmacen;
+        public ProductoInformatico Oinformatico;
         public string Acción;
         public Form1()
         {
             InitializeComponent();
+            Oalmacen = new Almacén();
             ModoLista();
         }
 
@@ -32,7 +35,7 @@ namespace Final_POO
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ModoIngreso();
+            Oinformatico = new ProductoInformatico();
             Acción = "A";
             ModoIngreso();
             ClearTXT();
