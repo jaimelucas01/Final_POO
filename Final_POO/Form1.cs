@@ -2,6 +2,7 @@ namespace Final_POO
 {
     public partial class Form1 : Form
     {
+        private List<ProductoInformatico> productos = new List<ProductoInformatico>();//agrego l
         public Form1()
         {
             InitializeComponent();
