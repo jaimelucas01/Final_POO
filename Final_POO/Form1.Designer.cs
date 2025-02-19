@@ -50,8 +50,8 @@
             btnExit = new Button();
             gboLista = new GroupBox();
             gboIngreso = new GroupBox();
-            btnGuardar = new Button();
             btnCanc = new Button();
+            btnGuardar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPartes).BeginInit();
             gboLista.SuspendLayout();
             gboIngreso.SuspendLayout();
@@ -252,15 +252,6 @@
             gboIngreso.TabStop = false;
             gboIngreso.Text = "Ingreso";
             // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(11, 245);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(230, 41);
-            btnGuardar.TabIndex = 16;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            // 
             // btnCanc
             // 
             btnCanc.Location = new Point(136, 390);
@@ -270,6 +261,16 @@
             btnCanc.Text = "Cancelar";
             btnCanc.UseVisualStyleBackColor = true;
             btnCanc.Click += btnCanc_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(11, 245);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(230, 41);
+            btnGuardar.TabIndex = 16;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // Form1
             // 

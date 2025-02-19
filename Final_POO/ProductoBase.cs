@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final_POO
 {
-    internal class Producto
+    internal class ProductoBase
     {
     }
 }

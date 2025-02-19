@@ -2,7 +2,6 @@ namespace Final_POO
 {
     public partial class Form1 : Form
     {
-        private List<ProductoInformatico> productos = new List<ProductoInformatico>();
         public string Acción;
         public Form1()
         {
@@ -37,23 +36,6 @@ namespace Final_POO
             Acción = "A";
             ModoIngreso();
             ClearTXT();
-
-            if (txtMarca.Text == "" || txtComp.Text == "" || txtTipo.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
-            {
-                MessageBox.Show("No se ha podido crear.");
-            }
-            else
-            {
-                int i = dgvPartes.Rows.Add();
-
-                dgvPartes.Rows[i].Cells[0].Value = txtMarca.Text;
-                dgvPartes.Rows[i].Cells[1].Value = txtComp.Text;
-                dgvPartes.Rows[i].Cells[2].Value = txtTipo.Text;
-                dgvPartes.Rows[i].Cells[3].Value = txtPrecio.Text;
-                dgvPartes.Rows[i].Cells[4].Value = txtStock.Text;
-
-                ClearTXT();
-            }
         }
 
         private void btnMod_Click(object sender, EventArgs e)
@@ -77,6 +59,26 @@ namespace Final_POO
             if (dgvPartes.CurrentRow.Index > -1)
             {
                 dgvPartes.Rows.RemoveAt(dgvPartes.CurrentRow.Index);
+
+                ClearTXT();
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtMarca.Text == "" || txtComp.Text == "" || txtTipo.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
+            {
+                MessageBox.Show("No se ha podido crear.");
+            }
+            else
+            {
+                int i = dgvPartes.Rows.Add();
+
+                dgvPartes.Rows[i].Cells[0].Value = txtMarca.Text;
+                dgvPartes.Rows[i].Cells[1].Value = txtComp.Text;
+                dgvPartes.Rows[i].Cells[2].Value = txtTipo.Text;
+                dgvPartes.Rows[i].Cells[3].Value = txtPrecio.Text;
+                dgvPartes.Rows[i].Cells[4].Value = txtStock.Text;
 
                 ClearTXT();
             }
