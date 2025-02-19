@@ -3,13 +3,41 @@ namespace Final_POO
     public partial class Form1 : Form
     {
         private List<ProductoInformatico> productos = new List<ProductoInformatico>();
+        public string Acción;
         public Form1()
         {
             InitializeComponent();
+            ModoLista();
+        }
+
+        public void ModoIngreso()
+        {
+            gboIngreso.Enabled = true;
+            gboLista.Enabled = false;
+        }
+
+        public void ModoLista()
+        {
+            gboIngreso.Enabled = false;
+            gboLista.Enabled = true;
+        }
+
+        public void ClearTXT()
+        {
+            txtMarca.Clear();
+            txtComp.Clear();
+            txtTipo.Clear();
+            txtStock.Clear();
+            txtPrecio.Clear();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ModoIngreso();
+            Acción = "A";
+            ModoIngreso();
+            ClearTXT();
+
             if (txtMarca.Text == "" || txtComp.Text == "" || txtTipo.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
             {
                 MessageBox.Show("No se ha podido crear.");
@@ -24,11 +52,7 @@ namespace Final_POO
                 dgvPartes.Rows[i].Cells[3].Value = txtPrecio.Text;
                 dgvPartes.Rows[i].Cells[4].Value = txtStock.Text;
 
-                txtMarca.Text = "";
-                txtComp.Text = "";
-                txtTipo.Text = "";
-                txtPrecio.Text = "";
-                txtStock.Text = "";
+                ClearTXT();
             }
         }
 
@@ -44,11 +68,7 @@ namespace Final_POO
                 dgvPartes.Rows[fila].Cells[3].Value = txtPrecio.Text;
                 dgvPartes.Rows[fila].Cells[4].Value = txtStock.Text;
 
-                txtMarca.Text = "";
-                txtComp.Text = "";
-                txtTipo.Text = "";
-                txtPrecio.Text = "";
-                txtStock.Text = "";
+                ClearTXT();
             }
         }
 
@@ -58,17 +78,19 @@ namespace Final_POO
             {
                 dgvPartes.Rows.RemoveAt(dgvPartes.CurrentRow.Index);
 
-                txtMarca.Text = "";
-                txtComp.Text = "";
-                txtTipo.Text = "";
-                txtPrecio.Text = "";
-                txtStock.Text = "";
+                ClearTXT();
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCanc_Click(object sender, EventArgs e)
+        {
+            ClearTXT();
+            ModoLista();
         }
 
         private void Recargar()
@@ -89,5 +111,6 @@ namespace Final_POO
                 txtStock.Text = dgvPartes.Rows[fila].Cells[4].Value.ToString();
             }
         }
+
     }
 }

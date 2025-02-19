@@ -48,12 +48,13 @@
             txtTipo = new TextBox();
             label5 = new Label();
             btnExit = new Button();
-            gbo1 = new GroupBox();
-            gbo2 = new GroupBox();
+            gboLista = new GroupBox();
+            gboIngreso = new GroupBox();
             btnGuardar = new Button();
+            btnCanc = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPartes).BeginInit();
-            gbo1.SuspendLayout();
-            gbo2.SuspendLayout();
+            gboLista.SuspendLayout();
+            gboIngreso.SuspendLayout();
             SuspendLayout();
             // 
             // dgvPartes
@@ -208,7 +209,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(143, 394);
+            btnExit.Location = new Point(552, 390);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(107, 39);
             btnExit.TabIndex = 15;
@@ -216,39 +217,40 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // gbo1
+            // gboLista
             // 
-            gbo1.Controls.Add(dgvPartes);
-            gbo1.Controls.Add(btnMod);
-            gbo1.Controls.Add(btnAdd);
-            gbo1.Controls.Add(btnDel);
-            gbo1.Location = new Point(0, 0);
-            gbo1.Name = "gbo1";
-            gbo1.Size = new Size(670, 439);
-            gbo1.TabIndex = 16;
-            gbo1.TabStop = false;
-            gbo1.Text = "Lista";
+            gboLista.Controls.Add(dgvPartes);
+            gboLista.Controls.Add(btnExit);
+            gboLista.Controls.Add(btnMod);
+            gboLista.Controls.Add(btnAdd);
+            gboLista.Controls.Add(btnDel);
+            gboLista.Location = new Point(0, 0);
+            gboLista.Name = "gboLista";
+            gboLista.Size = new Size(670, 439);
+            gboLista.TabIndex = 16;
+            gboLista.TabStop = false;
+            gboLista.Text = "Lista";
             // 
-            // gbo2
+            // gboIngreso
             // 
-            gbo2.Controls.Add(btnGuardar);
-            gbo2.Controls.Add(btnExit);
-            gbo2.Controls.Add(txtTipo);
-            gbo2.Controls.Add(label1);
-            gbo2.Controls.Add(label5);
-            gbo2.Controls.Add(txtMarca);
-            gbo2.Controls.Add(txtStock);
-            gbo2.Controls.Add(label2);
-            gbo2.Controls.Add(label4);
-            gbo2.Controls.Add(txtComp);
-            gbo2.Controls.Add(label3);
-            gbo2.Controls.Add(txtPrecio);
-            gbo2.Location = new Point(665, 0);
-            gbo2.Name = "gbo2";
-            gbo2.Size = new Size(256, 439);
-            gbo2.TabIndex = 17;
-            gbo2.TabStop = false;
-            gbo2.Text = "Ingreso";
+            gboIngreso.Controls.Add(btnCanc);
+            gboIngreso.Controls.Add(btnGuardar);
+            gboIngreso.Controls.Add(txtTipo);
+            gboIngreso.Controls.Add(label1);
+            gboIngreso.Controls.Add(label5);
+            gboIngreso.Controls.Add(txtMarca);
+            gboIngreso.Controls.Add(txtStock);
+            gboIngreso.Controls.Add(label2);
+            gboIngreso.Controls.Add(label4);
+            gboIngreso.Controls.Add(txtComp);
+            gboIngreso.Controls.Add(label3);
+            gboIngreso.Controls.Add(txtPrecio);
+            gboIngreso.Location = new Point(665, 0);
+            gboIngreso.Name = "gboIngreso";
+            gboIngreso.Size = new Size(256, 439);
+            gboIngreso.TabIndex = 17;
+            gboIngreso.TabStop = false;
+            gboIngreso.Text = "Ingreso";
             // 
             // btnGuardar
             // 
@@ -259,19 +261,29 @@
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             // 
+            // btnCanc
+            // 
+            btnCanc.Location = new Point(136, 390);
+            btnCanc.Name = "btnCanc";
+            btnCanc.Size = new Size(107, 39);
+            btnCanc.TabIndex = 17;
+            btnCanc.Text = "Cancelar";
+            btnCanc.UseVisualStyleBackColor = true;
+            btnCanc.Click += btnCanc_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 441);
-            Controls.Add(gbo1);
-            Controls.Add(gbo2);
+            Controls.Add(gboLista);
+            Controls.Add(gboIngreso);
             Name = "Form1";
             Text = "Final POO";
             ((System.ComponentModel.ISupportInitialize)dgvPartes).EndInit();
-            gbo1.ResumeLayout(false);
-            gbo2.ResumeLayout(false);
-            gbo2.PerformLayout();
+            gboLista.ResumeLayout(false);
+            gboIngreso.ResumeLayout(false);
+            gboIngreso.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -297,8 +309,9 @@
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Stock;
         private DataGridViewTextBoxColumn Precio;
-        private GroupBox gbo1;
-        private GroupBox gbo2;
+        private GroupBox gboLista;
+        private GroupBox gboIngreso;
         private Button btnGuardar;
+        private Button btnCanc;
     }
 }
