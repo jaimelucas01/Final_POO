@@ -12,10 +12,6 @@ namespace Final_POO
 
         protected ProductoInformatico(int id, string nombre, string marca, decimal precio, int stock) : base()
         {
-            if (string.IsNullOrWhiteSpace(nombre)) throw new ArgumentException("El nombre no puede estar vacío.");
-            if (precio <= 0) throw new ArgumentException("El precio debe ser mayor a 0.");
-            if (stock < 0) throw new ArgumentException("El stock no puede ser negativo.");
-
             ID = id;
             Nombre = nombre;
             Marca = marca;

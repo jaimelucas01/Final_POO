@@ -95,7 +95,7 @@ namespace Final_POO
             ModoLista();
         }
 
-        private void Recargar()
+        private void Save()
         {
 
         }
