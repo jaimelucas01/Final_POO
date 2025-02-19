@@ -15,9 +15,9 @@ namespace Final_POO
             Socket = socket;
         }
 
-        //public override decimal CalcularDescuento(decimal porcentaje)
-        //{
-        //    return Precio - (Precio * (porcentaje / 100));
-        //}
+        public override decimal CalcularDescuento(decimal porcentaje)
+        {
+            return Precio - (Precio * (porcentaje / 100));
+        }
     }
 }

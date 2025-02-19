@@ -15,9 +15,9 @@ namespace Final_POO
             PotenciaW = potenciaW;
         }
 
-        //public override decimal CalcularDescuento(decimal porcentaje)
-        //{
-        //    return Precio - (Precio * (porcentaje / 100));
-        //}
+        public override decimal CalcularDescuento(decimal porcentaje)
+        {
+            return Precio - (Precio * (porcentaje / 100));
+        }
     }
 }

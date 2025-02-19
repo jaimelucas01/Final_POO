@@ -32,6 +32,6 @@ namespace Final_POO
             return $"{Tipo}: {Nombre} - {Marca}, Precio: {Precio:C}, Stock: {Stock}";
         }
 
-        //public abstract decimal CalcularDescuento(decimal porcentaje);
+        public abstract decimal CalcularDescuento(decimal porcentaje);
     }
 }

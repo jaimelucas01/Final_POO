@@ -14,5 +14,10 @@ namespace Final_POO
         {
             CapacidadGB = capacidadGB;
         }
+
+        public override decimal CalcularDescuento(decimal porcentaje)
+        {
+            return Precio - (Precio * (porcentaje / 100));
+        }
     }
 }
