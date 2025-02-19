@@ -35,7 +35,7 @@
             Stock = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            txtMarca = new TextBox();
+            txtID = new TextBox();
             txtComp = new TextBox();
             label2 = new Label();
             txtPrecio = new TextBox();
@@ -45,7 +45,7 @@
             btnDel = new Button();
             txtStock = new TextBox();
             label4 = new Label();
-            txtTipo = new TextBox();
+            txtMarca = new TextBox();
             label5 = new Label();
             btnExit = new Button();
             gboLista = new GroupBox();
@@ -102,16 +102,16 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 22);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(18, 15);
             label1.TabIndex = 1;
-            label1.Text = "Marca";
+            label1.Text = "ID";
             // 
-            // txtMarca
+            // txtID
             // 
-            txtMarca.Location = new Point(12, 40);
-            txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(230, 23);
-            txtMarca.TabIndex = 3;
+            txtID.Location = new Point(12, 40);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(230, 23);
+            txtID.TabIndex = 3;
             // 
             // txtComp
             // 
@@ -191,21 +191,21 @@
             label4.TabIndex = 11;
             label4.Text = "Stock";
             // 
-            // txtTipo
+            // txtMarca
             // 
-            txtTipo.Location = new Point(12, 128);
-            txtTipo.Name = "txtTipo";
-            txtTipo.Size = new Size(230, 23);
-            txtTipo.TabIndex = 14;
+            txtMarca.Location = new Point(12, 128);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(230, 23);
+            txtMarca.TabIndex = 14;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(12, 110);
             label5.Name = "label5";
-            label5.Size = new Size(30, 15);
+            label5.Size = new Size(40, 15);
             label5.TabIndex = 13;
-            label5.Text = "Tipo";
+            label5.Text = "Marca";
             // 
             // btnExit
             // 
@@ -235,10 +235,10 @@
             // 
             gboIngreso.Controls.Add(btnCanc);
             gboIngreso.Controls.Add(btnGuardar);
-            gboIngreso.Controls.Add(txtTipo);
+            gboIngreso.Controls.Add(txtMarca);
             gboIngreso.Controls.Add(label1);
             gboIngreso.Controls.Add(label5);
-            gboIngreso.Controls.Add(txtMarca);
+            gboIngreso.Controls.Add(txtID);
             gboIngreso.Controls.Add(txtStock);
             gboIngreso.Controls.Add(label2);
             gboIngreso.Controls.Add(label4);
@@ -292,7 +292,7 @@
 
         private DataGridView dgvPartes;
         private Label label1;
-        private TextBox txtMarca;
+        private TextBox txtID;
         private TextBox txtComp;
         private Label label2;
         private TextBox txtPrecio;
@@ -302,7 +302,7 @@
         private Button btnDel;
         private TextBox txtStock;
         private Label label4;
-        private TextBox txtTipo;
+        private TextBox txtMarca;
         private Label label5;
         private Button btnExit;
         private DataGridViewTextBoxColumn Marca;

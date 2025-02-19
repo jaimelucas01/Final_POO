@@ -23,9 +23,9 @@ namespace Final_POO
 
         public void ClearTXT()
         {
-            txtMarca.Clear();
+            txtID.Clear();
             txtComp.Clear();
-            txtTipo.Clear();
+            txtMarca.Clear();
             txtStock.Clear();
             txtPrecio.Clear();
         }
@@ -44,9 +44,9 @@ namespace Final_POO
             {
                 int fila = dgvPartes.CurrentRow.Index;
 
-                dgvPartes.Rows[fila].Cells[0].Value = txtMarca.Text;
+                dgvPartes.Rows[fila].Cells[0].Value = txtID.Text;
                 dgvPartes.Rows[fila].Cells[1].Value = txtComp.Text;
-                dgvPartes.Rows[fila].Cells[2].Value = txtTipo.Text;
+                dgvPartes.Rows[fila].Cells[2].Value = txtMarca.Text;
                 dgvPartes.Rows[fila].Cells[3].Value = txtPrecio.Text;
                 dgvPartes.Rows[fila].Cells[4].Value = txtStock.Text;
 
@@ -66,7 +66,7 @@ namespace Final_POO
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtMarca.Text == "" || txtComp.Text == "" || txtTipo.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
+            if (txtID.Text == "" || txtComp.Text == "" || txtMarca.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
             {
                 MessageBox.Show("No se ha podido crear.");
             }
@@ -74,9 +74,9 @@ namespace Final_POO
             {
                 int i = dgvPartes.Rows.Add();
 
-                dgvPartes.Rows[i].Cells[0].Value = txtMarca.Text;
+                dgvPartes.Rows[i].Cells[0].Value = txtID.Text;
                 dgvPartes.Rows[i].Cells[1].Value = txtComp.Text;
-                dgvPartes.Rows[i].Cells[2].Value = txtTipo.Text;
+                dgvPartes.Rows[i].Cells[2].Value = txtMarca.Text;
                 dgvPartes.Rows[i].Cells[3].Value = txtPrecio.Text;
                 dgvPartes.Rows[i].Cells[4].Value = txtStock.Text;
 
@@ -106,9 +106,9 @@ namespace Final_POO
             {
                 int fila = dgvPartes.CurrentRow.Index;
 
-                txtMarca.Text = dgvPartes.Rows[fila].Cells[0].Value.ToString();
+                txtID.Text = dgvPartes.Rows[fila].Cells[0].Value.ToString();
                 txtComp.Text = dgvPartes.Rows[fila].Cells[1].Value.ToString();
-                txtTipo.Text = dgvPartes.Rows[fila].Cells[2].Value.ToString();
+                txtMarca.Text = dgvPartes.Rows[fila].Cells[2].Value.ToString();
                 txtPrecio.Text = dgvPartes.Rows[fila].Cells[3].Value.ToString();
                 txtStock.Text = dgvPartes.Rows[fila].Cells[4].Value.ToString();
             }

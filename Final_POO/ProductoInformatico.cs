@@ -16,8 +16,8 @@ namespace Final_POO
             if (precio <= 0) throw new ArgumentException("El precio debe ser mayor a 0.");
             if (stock < 0) throw new ArgumentException("El stock no puede ser negativo.");
 
-            Nombre = nombre;
             ID = id;
+            Nombre = nombre;
             Marca = marca;
             Precio = precio;
             Stock = stock;
