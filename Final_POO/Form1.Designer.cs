@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             dgvPartes = new DataGridView();
-            Marca = new DataGridViewTextBoxColumn();
-            Componente = new DataGridViewTextBoxColumn();
-            Tipo = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
             label1 = new Label();
             txtID = new TextBox();
             txtComp = new TextBox();
@@ -52,6 +47,11 @@
             gboIngreso = new GroupBox();
             btnCanc = new Button();
             btnGuardar = new Button();
+            ID = new DataGridViewTextBoxColumn();
+            Componente = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPartes).BeginInit();
             gboLista.SuspendLayout();
             gboIngreso.SuspendLayout();
@@ -60,42 +60,12 @@
             // dgvPartes
             // 
             dgvPartes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPartes.Columns.AddRange(new DataGridViewColumn[] { Marca, Componente, Tipo, Stock, Precio });
+            dgvPartes.Columns.AddRange(new DataGridViewColumn[] { ID, Componente, Marca, Stock, Precio });
             dgvPartes.Location = new Point(12, 22);
             dgvPartes.Name = "dgvPartes";
             dgvPartes.Size = new Size(646, 337);
             dgvPartes.TabIndex = 0;
             dgvPartes.CellClick += dgvPartes_CellClick;
-            // 
-            // Marca
-            // 
-            Marca.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Marca.HeaderText = "Marca";
-            Marca.Name = "Marca";
-            // 
-            // Componente
-            // 
-            Componente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Componente.HeaderText = "Componente";
-            Componente.Name = "Componente";
-            // 
-            // Tipo
-            // 
-            Tipo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Tipo.HeaderText = "Tipo";
-            Tipo.Name = "Tipo";
-            // 
-            // Stock
-            // 
-            Stock.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
-            // 
-            // Precio
-            // 
-            Precio.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
             // 
             // label1
             // 
@@ -272,6 +242,36 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            // 
+            // Componente
+            // 
+            Componente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Componente.HeaderText = "Componente";
+            Componente.Name = "Componente";
+            // 
+            // Marca
+            // 
+            Marca.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Marca.HeaderText = "Marca";
+            Marca.Name = "Marca";
+            // 
+            // Stock
+            // 
+            Stock.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Stock.HeaderText = "Stock";
+            Stock.Name = "Stock";
+            // 
+            // Precio
+            // 
+            Precio.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,14 +305,14 @@
         private TextBox txtMarca;
         private Label label5;
         private Button btnExit;
-        private DataGridViewTextBoxColumn Marca;
-        private DataGridViewTextBoxColumn Componente;
-        private DataGridViewTextBoxColumn Tipo;
-        private DataGridViewTextBoxColumn Stock;
-        private DataGridViewTextBoxColumn Precio;
         private GroupBox gboLista;
         private GroupBox gboIngreso;
         private Button btnGuardar;
         private Button btnCanc;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Componente;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn Precio;
     }
 }
