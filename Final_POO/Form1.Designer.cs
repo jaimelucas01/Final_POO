@@ -59,7 +59,6 @@
             dgvPartes.Name = "dgvPartes";
             dgvPartes.Size = new Size(646, 337);
             dgvPartes.TabIndex = 0;
-            dgvPartes.CellClick += dgvPartes_CellClick;
             // 
             // label1
             // 

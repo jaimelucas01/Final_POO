@@ -10,13 +10,13 @@ namespace Final_POO
     {
         public ProductoInformatico() : base() { }
 
-        protected ProductoInformatico(int id, string nombre, string marca, decimal precio, int stock) : base()
+        protected ProductoInformatico(int id, string nombre, string marca, int stock, decimal precio) : base()
         {
             ID = id;
             Nombre = nombre;
             Marca = marca;
-            Precio = precio;
             Stock = stock;
+            Precio = precio;
         }
     }
 }

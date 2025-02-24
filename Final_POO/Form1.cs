@@ -1,3 +1,5 @@
+using System;
+
 namespace Final_POO
 {
     public partial class Form1 : Form
@@ -10,6 +12,12 @@ namespace Final_POO
             InitializeComponent();
             Oalmacen = new Almacén();
             ModoLista();
+        }
+
+        public void Recargar()
+        {
+            dgvPartes.DataSource = null;
+            dgvPartes.DataSource = Oalmacen.Productos;
         }
 
         public void ModoIngreso()
@@ -43,48 +51,91 @@ namespace Final_POO
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            if (this.dgvPartes.SelectedRows.Count == 1)
+            if (dgvPartes.CurrentRow.DataBoundItem == null)
             {
-                int fila = dgvPartes.CurrentRow.Index;
-
-                dgvPartes.Rows[fila].Cells[0].Value = txtID.Text;
-                dgvPartes.Rows[fila].Cells[1].Value = txtComp.Text;
-                dgvPartes.Rows[fila].Cells[2].Value = txtMarca.Text;
-                dgvPartes.Rows[fila].Cells[3].Value = txtPrecio.Text;
-                dgvPartes.Rows[fila].Cells[4].Value = txtStock.Text;
-
-                ClearTXT();
+                MessageBox.Show("Por favor, seleccione una celda.");
+                return;
             }
+
+            Oinformatico = (ProductoInformatico)dgvPartes.CurrentRow.DataBoundItem;
+            txtID.Text = Oinformatico.ID.ToString();
+            txtComp.Text = Oinformatico.Nombre;
+            txtMarca.Text = Oinformatico.Marca;
+            txtStock.Text = Oinformatico.Stock.ToString();
+            txtPrecio.Text = Oinformatico.Precio.ToString();
+
+            ModoIngreso();
+            Acción = "M";
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (dgvPartes.CurrentRow.Index > -1)
+            if (dgvPartes.CurrentRow.DataBoundItem == null)
             {
-                dgvPartes.Rows.RemoveAt(dgvPartes.CurrentRow.Index);
+                MessageBox.Show("Por favor, seleccione una celda.");
+                return;
+            }
 
-                ClearTXT();
+            Oinformatico = (ProductoInformatico)dgvPartes.CurrentRow.DataBoundItem;
+
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el producto " + Oinformatico.Marca + " de la lista?", "Atención", MessageBoxButtons.YesNo);
+            
+            if (resultado == DialogResult.Yes)
+            {
+                Oalmacen.Productos.Remove(Oinformatico);
+                Recargar();
+                ModoLista();
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtComp.Text == "" || txtMarca.Text == "" || txtPrecio.Text == "" || txtStock.Text == "")
-            {
-                MessageBox.Show("No se ha podido crear.");
-            }
-            else
-            {
-                int i = dgvPartes.Rows.Add();
+            #region VALIDACIONES
 
-                dgvPartes.Rows[i].Cells[0].Value = txtID.Text;
-                dgvPartes.Rows[i].Cells[1].Value = txtComp.Text;
-                dgvPartes.Rows[i].Cells[2].Value = txtMarca.Text;
-                dgvPartes.Rows[i].Cells[3].Value = txtPrecio.Text;
-                dgvPartes.Rows[i].Cells[4].Value = txtStock.Text;
-
-                ClearTXT();
+            int id;
+            if (!int.TryParse(txtID.Text, out id) || id <= 0)
+            {
+                MessageBox.Show("Ingrese un ID válido.");
+                return;
             }
+            if (string.IsNullOrWhiteSpace(txtComp.Text))
+            {
+                MessageBox.Show("Ingrese un Componente válido.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtMarca.Text))
+            {
+                MessageBox.Show("Ingrese una Marca válida.");
+                return;
+            }
+            int stock;
+            if (!int.TryParse(txtStock.Text, out stock) || stock <= 0)
+            {
+                MessageBox.Show("Ingrese un Stock mayor a 0");
+                return;
+            }
+            decimal precio;
+            if (!decimal.TryParse(txtPrecio.Text, out precio) || precio <= 0)
+            {
+                MessageBox.Show("Ingrese un Precio mayor a 0");
+                return;
+            }
+            #endregion
+
+            Oinformatico.ID = id;
+            Oinformatico.Nombre = txtComp.Text;
+            Oinformatico.Marca = txtMarca.Text;
+            Oinformatico.Stock = stock;
+            Oinformatico.Precio = precio;
+
+            if (Acción == "A")
+            {
+                Oalmacen.Productos.Add(Oinformatico);
+            }
+
+            Recargar();
+            ClearTXT();
+            ModoLista();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -96,25 +147,6 @@ namespace Final_POO
         {
             ClearTXT();
             ModoLista();
-        }
-
-        private void Save()
-        {
-
-        }
-
-        private void dgvPartes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (this.dgvPartes.SelectedRows.Count == 1)
-            {
-                int fila = dgvPartes.CurrentRow.Index;
-
-                txtID.Text = dgvPartes.Rows[fila].Cells[0].Value.ToString();
-                txtComp.Text = dgvPartes.Rows[fila].Cells[1].Value.ToString();
-                txtMarca.Text = dgvPartes.Rows[fila].Cells[2].Value.ToString();
-                txtPrecio.Text = dgvPartes.Rows[fila].Cells[3].Value.ToString();
-                txtStock.Text = dgvPartes.Rows[fila].Cells[4].Value.ToString();
-            }
         }
 
     }
