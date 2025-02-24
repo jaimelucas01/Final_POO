@@ -57,6 +57,7 @@
             // 
             // dgvPartes
             // 
+            dgvPartes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPartes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPartes.Location = new Point(12, 22);
             dgvPartes.Name = "dgvPartes";
@@ -114,6 +115,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnAdd.Location = new Point(16, 364);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(107, 41);
@@ -124,6 +126,7 @@
             // 
             // btnMod
             // 
+            btnMod.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnMod.Location = new Point(129, 364);
             btnMod.Name = "btnMod";
             btnMod.Size = new Size(107, 39);
@@ -134,6 +137,7 @@
             // 
             // btnDel
             // 
+            btnDel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnDel.Location = new Point(242, 364);
             btnDel.Name = "btnDel";
             btnDel.Size = new Size(107, 39);
@@ -176,12 +180,14 @@
             // 
             // btnExit
             // 
+            btnExit.BackColor = Color.IndianRed;
+            btnExit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.Location = new Point(552, 390);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(107, 39);
             btnExit.TabIndex = 15;
             btnExit.Text = "Salir";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // gboLista
@@ -202,22 +208,26 @@
             // 
             // btnMayor
             // 
+            btnMayor.BackColor = SystemColors.ActiveCaption;
+            btnMayor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMayor.Location = new Point(474, 365);
             btnMayor.Name = "btnMayor";
             btnMayor.Size = new Size(72, 41);
             btnMayor.TabIndex = 17;
             btnMayor.Text = "Mayor";
-            btnMayor.UseVisualStyleBackColor = true;
+            btnMayor.UseVisualStyleBackColor = false;
             btnMayor.Click += btnMayor_Click;
             // 
             // btnMenor
             // 
+            btnMenor.BackColor = SystemColors.ActiveCaption;
+            btnMenor.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnMenor.Location = new Point(396, 365);
             btnMenor.Name = "btnMenor";
             btnMenor.Size = new Size(72, 41);
             btnMenor.TabIndex = 16;
             btnMenor.Text = "Menor";
-            btnMenor.UseVisualStyleBackColor = true;
+            btnMenor.UseVisualStyleBackColor = false;
             btnMenor.Click += btnMenor_Click;
             // 
             // gboIngreso
@@ -243,16 +253,19 @@
             // 
             // btnCanc
             // 
+            btnCanc.BackColor = Color.IndianRed;
+            btnCanc.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnCanc.Location = new Point(136, 390);
             btnCanc.Name = "btnCanc";
             btnCanc.Size = new Size(107, 39);
             btnCanc.TabIndex = 17;
             btnCanc.Text = "Cancelar";
-            btnCanc.UseVisualStyleBackColor = true;
+            btnCanc.UseVisualStyleBackColor = false;
             btnCanc.Click += btnCanc_Click;
             // 
             // btnGuardar
             // 
+            btnGuardar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnGuardar.Location = new Point(11, 245);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(230, 41);
