@@ -14,5 +14,15 @@ namespace Final_POO
         {
             Productos = new List<ProductoInformatico>();
         }
+
+        public List<ProductoInformatico> ObtenerProductosOrdenadosMenor()
+        {
+            return Productos.OrderBy(p => p.Precio).ToList();
+        }
+
+        public List<ProductoInformatico> ObtenerProductosOrdenadosMayor()
+        {
+            return Productos.OrderByDescending(p => p.Precio).ToList();
+        }
     }
 }

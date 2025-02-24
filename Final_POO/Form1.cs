@@ -1,23 +1,24 @@
 using System;
+using System.Windows.Forms;
 
 namespace Final_POO
 {
     public partial class Form1 : Form
     {
-        public Almacén Oalmacen;
+        public Almacén Oalmacén;
         public ProductoInformatico Oinformatico;
         public string Acción;
         public Form1()
         {
             InitializeComponent();
-            Oalmacen = new Almacén();
+            Oalmacén = new Almacén();
             ModoLista();
         }
 
         public void Recargar()
         {
             dgvPartes.DataSource = null;
-            dgvPartes.DataSource = Oalmacen.Productos;
+            dgvPartes.DataSource = Oalmacén.Productos;
         }
 
         public void ModoIngreso()
@@ -79,10 +80,10 @@ namespace Final_POO
             Oinformatico = (ProductoInformatico)dgvPartes.CurrentRow.DataBoundItem;
 
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el producto " + Oinformatico.Marca + " de la lista?", "Atención", MessageBoxButtons.YesNo);
-            
+
             if (resultado == DialogResult.Yes)
             {
-                Oalmacen.Productos.Remove(Oinformatico);
+                Oalmacén.Productos.Remove(Oinformatico);
                 Recargar();
                 ModoLista();
             }
@@ -130,7 +131,7 @@ namespace Final_POO
 
             if (Acción == "A")
             {
-                Oalmacen.Productos.Add(Oinformatico);
+                Oalmacén.Productos.Add(Oinformatico);
             }
 
             Recargar();
@@ -149,5 +150,30 @@ namespace Final_POO
             ModoLista();
         }
 
+        private void btnMayor_Click(object sender, EventArgs e)
+        {
+            if (dgvPartes.DataSource == null)
+            {
+                MessageBox.Show("Primero ingrese un Producto.");
+                return;
+            }
+            else
+            {
+                dgvPartes.DataSource = Oalmacén.ObtenerProductosOrdenadosMayor();
+            }
+        }
+
+        private void btnMenor_Click(object sender, EventArgs e)
+        {
+            if (dgvPartes.DataSource == null)
+            {
+                MessageBox.Show("Primero ingrese un Producto.");
+                return;
+            }
+            else
+            {
+                dgvPartes.DataSource = Oalmacén.ObtenerProductosOrdenadosMenor();
+            }
+        }
     }
 }

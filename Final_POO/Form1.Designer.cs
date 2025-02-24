@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             dgvPartes = new DataGridView();
             label1 = new Label();
             txtID = new TextBox();
@@ -44,6 +45,8 @@
             label5 = new Label();
             btnExit = new Button();
             gboLista = new GroupBox();
+            btnMayor = new Button();
+            btnMenor = new Button();
             gboIngreso = new GroupBox();
             btnCanc = new Button();
             btnGuardar = new Button();
@@ -57,6 +60,7 @@
             dgvPartes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPartes.Location = new Point(12, 22);
             dgvPartes.Name = "dgvPartes";
+            dgvPartes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dgvPartes.Size = new Size(646, 337);
             dgvPartes.TabIndex = 0;
             // 
@@ -182,6 +186,8 @@
             // 
             // gboLista
             // 
+            gboLista.Controls.Add(btnMayor);
+            gboLista.Controls.Add(btnMenor);
             gboLista.Controls.Add(dgvPartes);
             gboLista.Controls.Add(btnExit);
             gboLista.Controls.Add(btnMod);
@@ -193,6 +199,26 @@
             gboLista.TabIndex = 16;
             gboLista.TabStop = false;
             gboLista.Text = "Lista";
+            // 
+            // btnMayor
+            // 
+            btnMayor.Location = new Point(474, 365);
+            btnMayor.Name = "btnMayor";
+            btnMayor.Size = new Size(72, 41);
+            btnMayor.TabIndex = 17;
+            btnMayor.Text = "Mayor";
+            btnMayor.UseVisualStyleBackColor = true;
+            btnMayor.Click += btnMayor_Click;
+            // 
+            // btnMenor
+            // 
+            btnMenor.Location = new Point(396, 365);
+            btnMenor.Name = "btnMenor";
+            btnMenor.Size = new Size(72, 41);
+            btnMenor.TabIndex = 16;
+            btnMenor.Text = "Menor";
+            btnMenor.UseVisualStyleBackColor = true;
+            btnMenor.Click += btnMenor_Click;
             // 
             // gboIngreso
             // 
@@ -242,6 +268,7 @@
             ClientSize = new Size(920, 441);
             Controls.Add(gboLista);
             Controls.Add(gboIngreso);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Final POO";
             ((System.ComponentModel.ISupportInitialize)dgvPartes).EndInit();
@@ -272,5 +299,7 @@
         private GroupBox gboIngreso;
         private Button btnGuardar;
         private Button btnCanc;
+        private Button btnMenor;
+        private Button btnMayor;
     }
 }
